@@ -5,6 +5,7 @@ export const DarkTheme = {
     image: 'url("./mainNight.png") lightgray 50% / cover no-repeat',
     colors: {
         background: '#393737',
+        fill: '#cece6c',
         button: {
             backgroundColor: '#202144',
             textColor: '#fff',
