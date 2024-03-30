@@ -87,8 +87,34 @@ const GlobalStyle = createGlobalStyle`
     :target {
         scroll-margin-block: 5ex;
     }
-
     
+    p {
+        font-family: Inter,serif;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.5rem;
+        color: #767676;/* 160% */
+        
+    }
+    h3 {
+        font-size: 1.2rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 123.6%; /* 22.248px */
+        text-transform: capitalize;
+    }
+    h4 {
+        color: #2B2B2B;
+
+        /* H3 - 24px */
+        font-family: Inter,serif;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 123.6%; /* 29.664px */
+        text-transform: capitalize;
+    }
     
 
 `

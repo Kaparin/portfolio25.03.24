@@ -1,29 +1,37 @@
 import React from 'react';
 import styled from "styled-components";
 
+
 export const Header: React.FC = () => {
     return (
+        <HeaderBackground>
         <HeaderWrapper>
             <HeaderContent>
-                <Title>I’m Rayan Adlrdard<br/>
-                    <span>Front-end</span> Developer </Title>
-                <Subtitle>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, volutpat feugiat placerat lobortis. Natoque rutrum semper sed suspendisse nunc lectus.</Subtitle>
+                <HeaderTitle>I’m Rayan Adlrdard<br/>
+                    <span>Front-end</span> Developer </HeaderTitle>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, volutpat feugiat placerat lobortis. Natoque rutrum semper sed suspendisse nunc lectus.</p>
                 <HireButton>HIRE ME<span className="icon-Hire-Me"></span></HireButton>
             </HeaderContent>
             <HeroImage src="/images/HeroImage.svg" alt="Rayan Adlardard" />
             {/* SVG и векторные элементы здесь */}
         </HeaderWrapper>
+        </HeaderBackground>
     );
 };
 
+
+export const HeaderBackground = styled.div`
+    background-color: #ffffff;
+    width: 100%;
+`
 export const HeaderWrapper = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #ffffff;
-    max-width: 970px; // Максимальная ширина контейнера, как в вашем дизайне
-    height: 467px;
+    max-width: 1020px;
     margin: 0 auto;
+    // Максимальная ширина контейнера, как в вашем дизайне
+    height: 467px;
         span {
             color: #FFB400;
         }
@@ -34,6 +42,9 @@ export const HeaderWrapper = styled.header`
 `;
 
 export const HeaderContent = styled.div`
+    p {
+        margin-top: 1rem;
+    }
     margin: 6rem 2rem 3.5rem 3.7rem;
   // Если нужно оставить текст слева и изображение справа на мобильных
   @media (max-width: 768px) {
@@ -43,7 +54,7 @@ export const HeaderContent = styled.div`
   }
 `;
 
-export const Title = styled.h1`
+export const HeaderTitle = styled.h1`
     color: #2B2B2B;
     font-family: Inter, serif;
     font-style: normal;
@@ -60,14 +71,7 @@ export const Title = styled.h1`
     }
 `;
 
-export const Subtitle = styled.p`
-    font-size: 1rem;
-    color: #767676;
-    font-weight: 400;
-    line-height: 1.5rem; 
-    text-transform: capitalize;
-    
-`;
+
 
 export const HireButton = styled.button`
     border: none;
@@ -100,6 +104,8 @@ interface HeroImageProps {
 }
 export const HeroImage = styled.img<HeroImageProps> `
     width: 50%;
+    max-width: 325px;
+    max-height: 459px;
     height: auto;
     margin-right: 3rem;
     margin-bottom: -0.7rem;

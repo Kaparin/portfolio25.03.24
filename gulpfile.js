@@ -15,9 +15,9 @@ const config = {
 };
 
 gulp.task('svg-sprite', function () {
-    return gulp.src('F:\\Work_Space\\portfolio25.03.24\\public\\icons\\*.svg') // указываем путь к SVG файлам
+    return gulp.src('F:\\Work_Space\\portfolio25.03.24\\src\\components\\icons\\*.svg') // указываем путь к SVG файлам
         .pipe(svgSprite(config))
-        .pipe(gulp.dest('F:\\Work_Space\\portfolio25.03.24\\public\\icons')) // указываем путь, куда сохраняем спрайт
+        .pipe(gulp.dest('F:\\Work_Space\\portfolio25.03.24\\src\\assets')) // указываем путь, куда сохраняем спрайт
         .pipe(tap(function(file) {
             if (file.path.endsWith('sprite.svg')) {
                 createIconMap(file.path);
@@ -32,12 +32,12 @@ function createIconMap(path) {
         }
         xml2js.parseString(data, function(err, result) {
             const symbols = result.svg.symbol;
-            const iconNames = symbols.map((symbol) => symbol.$.id);
-            fs.writeFile('./public/icons/icon-map.txt', iconNames.join('\n'), function(err) {
+            const iconNames = symbols.map(symbol => symbol.$.id);
+            fs.appendFile('./src/icon-map.txt', '\n' + iconNames.join('\n'), function(err) {
                 if (err) {
                     throw err;
                 }
             });
         });
     });
-};
+}
